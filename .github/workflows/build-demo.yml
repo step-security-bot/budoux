@@ -1,7 +1,12 @@
 name: Build Demo
 on: [push]
+permissions:
+  contents: read
+
 jobs:
   deploy:
+    permissions:
+      contents: write  # for peaceiris/actions-gh-pages to push pages branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
